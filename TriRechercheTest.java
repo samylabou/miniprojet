@@ -15,6 +15,6 @@ public class TriRechercheTest {
 	 
 		String entree = "08";
         Recherche recherche = new Recherche();
-        assertEquals( entree, recherche.rechTab(tab, entree));
+        assertEquals( entree, recherche.rechercheDicho(tab,7,entree));
  	}
 }
