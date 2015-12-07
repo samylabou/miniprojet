@@ -1,0 +1,33 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+apply plugin: 'jacoco'
+//apply plugin: 'findbugs'
+
+test{
+systemProperties 'property' : 'value'
+
+}
+
+jacocoTestReport{
+	reports{
+		xml.enabled false
+		csv.enabled false
+		html.destination "${buildDir}/jacocoHtml"
+}
+}
+
+//findbugs  {
+//	toolVersion = "3.0.1" //attention à la compatibilité avec Java >= 1.7
+//	effort = "min"
+//	reportLevel = "high"
+//}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+}
